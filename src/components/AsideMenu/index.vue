@@ -35,7 +35,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
-export default class AsideMenu extends Vue {};
+export default class AsideMenu extends Vue {}
 </script>
 
 <style scoped>

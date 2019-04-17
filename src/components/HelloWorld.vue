@@ -10,16 +10,18 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class HelloWorld extends Vue {
-  @Prop() 
+  [x: string]: any;  // 用来使 this.$message 编译通过，不然报此类没有这个属性的错
+
+  @Prop()
   public msg!: string;
 
   /**
    * beforeCreated
    */
   public mounted() {
-    this.$message('234');
-  } 
-};
+      this.$message('234');
+  }
+}
 
 </script>
 
