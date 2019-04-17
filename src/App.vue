@@ -1,36 +1,49 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-container style="border: 1px solid #eee">
+      <aside-menu />
+      <el-container>
+        <el-main>
+          <iframe 
+            src="http://support.supermap.com.cn:8090/webgl/examples/editor.html#S3MTiles_suofeiya"
+            name="s3m三维切片缓存"
+            height="100%"
+            width="100%"
+            scrolling="no"
+            seamless/>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
 
-export default {
-  name: 'app',
+import AsideMenu from './components/AsideMenu/index.vue';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component({
   components: {
-    HelloWorld
-  }
-}
+    AsideMenu
+  },
+})
+export default class App extends Vue {
+   
+};
 </script>
 
 <style>
+body {
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.el-main {
+  height: 100vh;
 }
 </style>
